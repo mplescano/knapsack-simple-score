@@ -10,5 +10,6 @@
   <root level="INFO">
     <appender-ref ref="CONSOLE" />
   </root>
-  <logger name="org.optaplanner" level="INFO" />
+  <logger name="org.optaplanner" level="info" />
+  <logger name="com.mplescano.app.poc.optaplanner.knapsack.simple.solver.score" level="debug"/>
 </configuration>

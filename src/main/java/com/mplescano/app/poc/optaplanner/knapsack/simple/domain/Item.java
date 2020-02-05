@@ -1,19 +1,3 @@
-/*
- * Copyright 2014 JBoss Inc
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.mplescano.app.poc.optaplanner.knapsack.simple.domain;
 
 import java.io.Serializable;
@@ -22,59 +6,55 @@ import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
-@PlanningEntity
+import com.mplescano.app.poc.optaplanner.knapsack.simple.solver.ItemDifficultyComparator;
+
+@PlanningEntity(difficultyComparatorClass = ItemDifficultyComparator.class)
 public class Item implements Serializable {
 
-	private static final long serialVersionUID = -3689317429583843521L;
+  private static final long serialVersionUID = -3689317429583843521L;
 
-	protected int id;
+  private long id;
 
-	private int weight;
+  private int size;
 
-	private Boolean inside;
+  private Bin bin;
 
-	public Item() {
-	}
+  public Item() {
+  }
 
-	public Item(int id, int weight) {
-		this.id = id;
-		this.weight = weight;
-	}
-	
-	public Item(int id, int weight, boolean inside) {
-		this.id = id;
-		this.weight = weight;
-		this.inside = Boolean.valueOf(inside);
-	}
+  public Item(int id, int size) {
+    this.id = id;
+    this.size = size;
+  }
 
-	public int getWeight() {
-		return weight;
-	}
+  public int getSize() {
+    return size;
+  }
 
-	public void setWeight(int weight) {
-		this.weight = weight;
-	}
+  public void setSize(int size) {
+    this.size = size;
+  }
 
-	@PlanningVariable(valueRangeProviderRefs = { "insideRange" })
-	public Boolean getInside() {
-		return inside;
-	}
+  @PlanningVariable(valueRangeProviderRefs = "binReference")
+  public Bin getBin() {
+    return bin;
+  }
 
-	public void setInside(Boolean inside) {
-		this.inside = inside;
-	}
+  public void setBin(Bin inside) {
+    this.bin = inside;
+  }
 
-	@Override
-	public String toString() {
-		return getClass().getName().replaceAll(".*\\.", "") + "-" + id + "@" + weight + "-" + inside;
-	}
+  @Override
+  public String toString() {
+    return getClass().getName().replaceAll(".*\\.", "") + "-" + id + "@" + size + "-" + bin;
+  }
 
-	@PlanningId
-	public int getId() {
-		return id;
-	}
+  @PlanningId
+  public long getId() {
+    return id;
+  }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+  public void setId(long id) {
+    this.id = id;
+  }
 }

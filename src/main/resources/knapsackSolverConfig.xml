@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
   <!-- Domain model configuration -->
-  <solutionClass>com.mplescano.app.poc.optaplanner.knapsack.simple.domain.KnapsackSolution</solutionClass>
+  <solutionClass>com.mplescano.app.poc.optaplanner.knapsack.simple.domain.PackingSolution</solutionClass>
   <entityClass>com.mplescano.app.poc.optaplanner.knapsack.simple.domain.Item</entityClass>
 
   <!-- Score configuration -->
@@ -10,9 +10,9 @@
     <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
   </scoreDirectorFactory>
 
-  <!-- <constructionHeuristic>
+  <constructionHeuristic>
     <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
-  </constructionHeuristic>-->
+  </constructionHeuristic>
   <localSearch>
     <acceptor>
       <entityTabuSize>7</entityTabuSize>
