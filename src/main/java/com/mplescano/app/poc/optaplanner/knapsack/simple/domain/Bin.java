@@ -8,6 +8,14 @@ public class Bin {
 
   private int volume;
 
+  public Bin() {
+  }
+
+  public Bin(long id, int volume) {
+    this.id = id;
+    this.volume = volume;
+  }
+
   public int getVolume() {
     return volume;
   }

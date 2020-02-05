@@ -17,7 +17,7 @@ public class KnapsackEasyScoreCalculator implements EasyScoreCalculator<PackingS
 		int hardScore;
 		int sumMass = 0;
 		for (Item item : knapsack.getListItem()) {
-			if (item.getBin() != null) {
+			if (item.getBin() != PackingSolution.NULL_BIN) {
 				sumMass += item.getSize();
 			}
 		}

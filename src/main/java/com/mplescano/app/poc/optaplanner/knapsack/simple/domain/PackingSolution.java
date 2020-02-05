@@ -23,6 +23,8 @@ public class PackingSolution {
 
   private Bin bin;
 
+  public final static Bin NULL_BIN = new Bin(Integer.MAX_VALUE, Integer.MAX_VALUE);
+
   @PlanningScore
   public SimpleScore getScore() {
     return score;
@@ -39,7 +41,7 @@ public class PackingSolution {
 
   @ValueRangeProvider(id = "binReference")
   public List<Bin> getListBin() {
-    return Arrays.asList(bin);
+    return Arrays.asList(bin, NULL_BIN);
   }
 
   @PlanningEntityCollectionProperty
