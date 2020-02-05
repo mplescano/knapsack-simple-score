@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+  <!-- Domain model configuration -->
+  <solutionClass>com.mplescano.app.poc.optaplanner.knapsack.simple.domain.KnapsackSolution</solutionClass>
+  <entityClass>com.mplescano.app.poc.optaplanner.knapsack.simple.domain.Item</entityClass>
+
+  <!-- Score configuration -->
+  <scoreDirectorFactory>
+    <easyScoreCalculatorClass>com.mplescano.app.poc.optaplanner.knapsack.simple.solver.score.KnapsackEasyScoreCalculator</easyScoreCalculatorClass>
+    <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+  </scoreDirectorFactory>
+
+  <!-- <constructionHeuristic>
+    <constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+  </constructionHeuristic>-->
+  <localSearch>
+    <acceptor>
+      <entityTabuSize>7</entityTabuSize>
+    </acceptor>
+    <forager>
+      <acceptedCountLimit>10</acceptedCountLimit>
+    </forager>
+    <termination>
+      <terminationCompositionStyle>OR</terminationCompositionStyle>
+      <secondsSpentLimit>30</secondsSpentLimit>
+      <unimprovedSecondsSpentLimit>1</unimprovedSecondsSpentLimit>
+    </termination>
+  </localSearch>
+</solver>
