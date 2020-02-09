@@ -24,7 +24,7 @@ public class KnapsackSolutionUnitTest {
     SolverFactory<PackingSolution> solverFactory = SolverFactory.createFromXmlResource("knapsackSolverConfig.xml");
     Solver<PackingSolution> solverCourseSchedule = solverFactory.buildSolver();
     PackingSolution solvedKnapsackSolution = solverCourseSchedule.solve(unsolvedKnapsackSolution);
-    solvedKnapsackSolution.printSolution();
+    System.out.print("solvedKnapsackSolution:" + solvedKnapsackSolution);
   }
 
   @Test
@@ -38,7 +38,7 @@ public class KnapsackSolutionUnitTest {
     SolverFactory<PackingSolution> solverFactory = SolverFactory.createFromXmlResource("knapsackSolverConfig.xml");
     Solver<PackingSolution> solverCourseSchedule = solverFactory.buildSolver();
     PackingSolution solvedKnapsackSolution = solverCourseSchedule.solve(unsolvedKnapsackSolution);
-    solvedKnapsackSolution.printSolution();
+    System.out.print("solvedKnapsackSolution: " + solvedKnapsackSolution);
   }
 
   private void fillItems(PackingSolution unsolvedKnapsackSolution) {

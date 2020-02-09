@@ -35,6 +35,6 @@ public class Bin {
 
   @Override
   public String toString() {
-    return getClass().getName().replaceAll(".*\\.", "") + "-" + id + "@" + volume;
+		return "Bin [id=" + id + ", volume=" + volume + ", toString()=" + super.toString() + "]";
   }
 }

@@ -6,7 +6,8 @@
 
   <!-- Score configuration -->
   <scoreDirectorFactory>
-    <easyScoreCalculatorClass>com.mplescano.app.poc.optaplanner.knapsack.simple.solver.score.KnapsackEasyScoreCalculator</easyScoreCalculatorClass>
+    <!-- <easyScoreCalculatorClass>com.mplescano.app.poc.optaplanner.knapsack.simple.solver.score.KnapsackEasyScoreCalculator</easyScoreCalculatorClass>-->
+    <scoreDrl>knapsackScoreRules.drl</scoreDrl>
     <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
   </scoreDirectorFactory>
 

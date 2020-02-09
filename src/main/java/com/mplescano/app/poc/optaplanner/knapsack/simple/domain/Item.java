@@ -44,14 +44,15 @@ public class Item implements Serializable {
     this.bin = inside;
   }
 
-  @Override
-  public String toString() {
-    return getClass().getName().replaceAll(".*\\.", "") + "-" + id + "@" + size + "-" + bin;
-  }
 
   @PlanningId
   public long getId() {
     return id;
+  }
+
+  @Override
+  public String toString() {
+		return "Item [id=" + id + ", size=" + size + ", bin=" + bin + ", toString()=" + super.toString() + "]";
   }
 
   public void setId(long id) {
