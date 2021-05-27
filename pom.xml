@@ -96,28 +96,16 @@
       <dependency>
         <groupId>org.kie</groupId>
         <artifactId>kie-platform-bom</artifactId>
+        <version>7.54.0.Final</version>
         <type>pom</type>
-        <!-- Keep in sync with part of project version -->
-        <version>7.32.0.Final</version>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.optaplanner</groupId>
         <artifactId>optaplanner</artifactId>
-        <version>7.32.0.Final</version>
+        <version>7.54.0.Final</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.optaplanner</groupId>
-        <artifactId>optaplanner-training-lab101</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.optaplanner</groupId>
-        <artifactId>optaplanner-training-assembly</artifactId>
-        <type>pom</type>
-        <version>${project.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

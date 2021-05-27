@@ -1,14 +1,14 @@
 package com.mplescano.app.poc.optaplanner.knapsack.simple.solver.score;
 
 import org.optaplanner.core.api.score.buildin.simple.SimpleScore;
-import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
+import org.optaplanner.core.api.score.calculator.EasyScoreCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.mplescano.app.poc.optaplanner.knapsack.simple.domain.Item;
 import com.mplescano.app.poc.optaplanner.knapsack.simple.domain.PackingSolution;
 
-public class KnapsackEasyScoreCalculator implements EasyScoreCalculator<PackingSolution> {
+public class KnapsackEasyScoreCalculator implements EasyScoreCalculator<PackingSolution, SimpleScore> {
 
 	Logger logger = LoggerFactory.getLogger(KnapsackEasyScoreCalculator.class);
 	
